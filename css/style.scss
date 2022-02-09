@@ -1,0 +1,103 @@
+//anchor color déclaration
+$black: #000000;
+$white: #ffffff;
+$red: #ff0000;
+$darkred: #880000;
+
+body {
+  background: $black;
+  color: $white;
+  font-family: sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul,ol{
+  list-style: none;
+}
+
+//anchor general (night)
+a{
+  color: white;
+}
+//Link navbar general/default
+#navbar{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  nav{
+    ul{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 95vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      li{
+        a{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .iconNav{
+          }
+          p{
+            font-weight: bold;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+//anchor day/night
+body.day {
+  background: $white;
+  color: $black;
+  //link navbar day
+}
+
+//anchor resposive
+//anchor desktop
+@media screen and (min-width: 1441px) {
+//Link navbar large
+  #navbar{
+    nav{
+      ul{
+        li{
+          a{
+            .iconNav{
+              height: 5vh;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//anchor mobile
+@media screen and (min-width: 144px) {
+  //Link navbar small
+  #navbar{
+    nav{
+      ul{
+        li{
+          a{
+            .iconNav{
+              width: 7vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
