@@ -1,0 +1,61 @@
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: white;
+}
+
+#navbar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 95vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#navbar nav ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#navbar nav ul li a p {
+  font-weight: bold;
+  text-align: center;
+}
+
+body.day {
+  background: #ffffff;
+  color: #000000;
+}
+
+@media screen and (min-width: 1441px) {
+  #navbar nav ul li a .iconNav {
+    height: 5vh;
+  }
+}
+@media screen and (min-width: 144px) {
+  #navbar nav ul li a .iconNav {
+    width: 7vw;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
