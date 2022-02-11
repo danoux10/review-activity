@@ -12,24 +12,42 @@ ul, ol {
   list-style: none;
 }
 
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 a {
   color: white;
 }
 
+.scroll_active {
+  transition: all ease 1s;
+}
 #navbar {
-  width: 100vw;
+  transition: all ease 0.5s;
+  position: fixed;
+  left: 0vw;
+  top: 0vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+#navbar nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+}
 #navbar nav ul {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
   width: 95vw;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 #navbar nav ul li a {
   display: flex;
@@ -37,9 +55,29 @@ a {
   justify-content: center;
   align-items: center;
 }
+#navbar nav ul li a .iconNav {
+  fill: #ffffff;
+}
 #navbar nav ul li a p {
   font-weight: bold;
   text-align: center;
+}
+
+div.night {
+  cursor: pointer;
+  content: url("../image/Icon feather-moon.svg");
+  border: 4px double #ffffff;
+  padding: 0.2%;
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  transition: all ease 0.5s;
+}
+
+div.day {
+  content: url("../image/Icon ionic-ios-sunny.svg");
+  border: 4px double black;
+  transition: all ease 0.5s;
 }
 
 body.day {
@@ -48,13 +86,14 @@ body.day {
 }
 
 @media screen and (min-width: 1441px) {
-  #navbar nav ul li a .iconNav {
-    height: 5vh;
+  #navbar nav ul li a .iconNav svg {
+    width: 2vw;
   }
 }
-@media screen and (min-width: 144px) {
-  #navbar nav ul li a .iconNav {
-    width: 7vw;
+@media screen and (max-width: 1440px) {
+  #navbar nav ul li a .iconNav svg {
+    width: 8vw;
+    stroke: #880000;
   }
 }
 

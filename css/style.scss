@@ -6,37 +6,60 @@ $darkred: #880000;
 
 body {
   background: $black;
+  //background: grey;
   color: $white;
   font-family: sans-serif;
 }
-
+//reset
 a{
   text-decoration: none;
 }
-
 ul,ol{
   list-style: none;
 }
 
+//general
+.hidden{
+  display: none;
+}
+.show{
+  display: block;
+}
 //anchor general (night)
 a{
   color: white;
 }
+
+
+
+.scroll_active{
+  transition: all ease 1s;
+  a{
+    svg{
+    }
+  }
+}
+
 //Link navbar general/default
 #navbar{
-  width: 100vw;
+  transition: all ease .5s;
+  position: fixed;
+  left: 0vw;
+  top: 0vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
     ul{
       display: flex;
-      justify-content: space-around;
       align-items: center;
+      justify-content: space-around;
       width: 95vw;
-      position: fixed;
-      top: 0;
-      left: 0;
       li{
         a{
           display: flex;
@@ -44,6 +67,7 @@ a{
           justify-content: center;
           align-items: center;
           .iconNav{
+            fill: $white;
           }
           p{
             font-weight: bold;
@@ -53,6 +77,42 @@ a{
       }
     }
   }
+}
+//link switch general/default
+//#switch {
+//  background: #000;
+//  cursor: pointer;
+//  content: url("../image/Icon feather-moon.svg");
+//  border: 4px double $white;
+//  padding: .2%;
+//  border-radius: 50px;
+//  width: 20px;
+//  height: 20px;
+//  transition: all ease .5s;
+//  //  fixme au click
+//  &:hover {
+//    background: #ffffff;
+//    content: url("../image/Icon ionic-ios-sunny.svg");
+//    border: 4px double black;
+//    transition: all ease .5s;
+//  }
+//}
+
+div.night{
+  cursor: pointer;
+  content: url("../image/Icon feather-moon.svg");
+  border: 4px double $white;
+  padding: .2%;
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  transition: all ease .5s;
+}
+
+div.day{
+  content: url("../image/Icon ionic-ios-sunny.svg");
+  border: 4px double black;
+  transition: all ease .5s;
 }
 
 //anchor day/night
@@ -72,7 +132,9 @@ body.day {
         li{
           a{
             .iconNav{
-              height: 5vh;
+              svg{
+                width: 2vw;
+              }
             }
           }
         }
@@ -82,7 +144,7 @@ body.day {
 }
 
 //anchor mobile
-@media screen and (min-width: 144px) {
+@media screen and (max-width:1440px) {
   //Link navbar small
   #navbar{
     nav{
@@ -90,7 +152,10 @@ body.day {
         li{
           a{
             .iconNav{
-              width: 7vw;
+              svg{
+                width: 8vw;
+                stroke: $darkred;
+              }
             }
           }
         }
