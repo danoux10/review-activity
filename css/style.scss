@@ -9,39 +9,39 @@ body {
   //background: grey;
   color: $white;
   font-family: sans-serif;
+  transition: all ease .5s;
 }
 //reset
-a{
+a {
   text-decoration: none;
 }
-ul,ol{
+ul, ol {
   list-style: none;
 }
 
 //general
-.hidden{
+.hidden {
   display: none;
 }
-.show{
+.show {
   display: block;
 }
-//anchor general (night)
-a{
+
+//anchor general
+a {
   color: white;
 }
-
-
-
-.scroll_active{
+.scroll_active {
   transition: all ease 1s;
-  a{
-    svg{
+
+  a {
+    svg {
     }
   }
 }
 
-//Link navbar general/default
-#navbar{
+//Link navbar general
+#navbar {
   transition: all ease .5s;
   position: fixed;
   left: 0vw;
@@ -50,26 +50,25 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  nav{
+
+  nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50vw;
-    ul{
+
+    ul {
       display: flex;
       align-items: center;
       justify-content: space-around;
-      width: 95vw;
-      li{
-        a{
+
+      li {
+        a {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          .iconNav{
-            fill: $white;
-          }
-          p{
+
+          p {
             font-weight: bold;
             text-align: center;
           }
@@ -78,30 +77,10 @@ a{
     }
   }
 }
-//link switch general/default
-//#switch {
-//  background: #000;
-//  cursor: pointer;
-//  content: url("../image/Icon feather-moon.svg");
-//  border: 4px double $white;
-//  padding: .2%;
-//  border-radius: 50px;
-//  width: 20px;
-//  height: 20px;
-//  transition: all ease .5s;
-//  //  fixme au click
-//  &:hover {
-//    background: #ffffff;
-//    content: url("../image/Icon ionic-ios-sunny.svg");
-//    border: 4px double black;
-//    transition: all ease .5s;
-//  }
-//}
 
-div.night{
+//link switch general
+#switch {
   cursor: pointer;
-  content: url("../image/Icon feather-moon.svg");
-  border: 4px double $white;
   padding: .2%;
   border-radius: 50px;
   width: 20px;
@@ -109,30 +88,107 @@ div.night{
   transition: all ease .5s;
 }
 
-div.day{
-  content: url("../image/Icon ionic-ios-sunny.svg");
-  border: 4px double black;
+//link icon general
+//fixme ici
+//anchor form add
+#icon_add{
+  margin-top: 6%;
+  border: 1px solid red;
+}
+
+//anchor preview
+#view_icon{
+  border: 1px solid lime;
+}
+//link night
+//anchor navbar
+#navbar {
+  nav {
+    ul {
+      li {
+        a {
+          .iconNav {
+            fill: $white;
+          }
+        }
+      }
+
+      li.activeNav {
+        a {
+          color: $red;
+
+          svg {
+            fill: $darkred;
+          }
+        }
+      }
+    }
+  }
+}
+//anchor icon
+//fixme ici ossi
+//anchor switch
+div.night {
+  content: url("../image/Icon feather-moon.svg");
+  border: 4px double $white;
   transition: all ease .5s;
 }
 
-//anchor day/night
+//link day/night
 body.day {
+  transition: all ease .5s;
   background: $white;
   color: $black;
-  //link navbar day
+  //anchor navbar day
+  #navbar {
+    nav {
+      ul {
+        li {
+          a {
+            color: $black;
+
+            .iconNav {
+              fill: $black;
+            }
+          }
+        }
+
+        li.iconNav {
+          a {
+            color: $darkred;
+          }
+
+          svg {
+            fill: $red;
+          }
+        }
+      }
+    }
+  }
+
+  //anchor swicth
+  div.day {
+    content: url("../image/Icon ionic-ios-sunny.svg");
+    border: 4px double black;
+    transition: all ease .5s;
+  }
 }
 
 //anchor resposive
 //anchor desktop
 @media screen and (min-width: 1441px) {
-//Link navbar large
-  #navbar{
-    nav{
-      ul{
-        li{
-          a{
-            .iconNav{
-              svg{
+  //Link navbar large
+  #navbar {
+    nav {
+      width: 50vw;
+
+      ul {
+        width: 95vw;
+
+        li {
+          a {
+            .iconNav {
+              svg {
                 width: 2vw;
               }
             }
@@ -141,27 +197,45 @@ body.day {
       }
     }
   }
+  //Link icon lage
 }
 
 //anchor mobile
-@media screen and (max-width:1440px) {
+@media screen and (max-width: 1440px) {
   //Link navbar small
-  #navbar{
-    nav{
-      ul{
-        li{
-          a{
-            .iconNav{
-              svg{
+  #navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+      ul {
+        width: 70vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        li {
+          a {
+            .iconNav {
+              svg {
                 width: 8vw;
-                stroke: $darkred;
+              }
+
+              p {
+                margin-top: 0;
               }
             }
+          }
+
+          &:nth-child(4) {
+            margin-top: 1vw;
           }
         }
       }
     }
   }
+  // link icon small
 }
 
 

@@ -1,3 +1,3 @@
 <?php
-	header('location:controller/navbar.php');
+	header('location:view/icon.php');
 	die();

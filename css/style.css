@@ -2,6 +2,7 @@ body {
   background: #000000;
   color: #ffffff;
   font-family: sans-serif;
+  transition: all ease 0.5s;
 }
 
 a {
@@ -41,13 +42,11 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;
 }
 #navbar nav ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 95vw;
 }
 #navbar nav ul li a {
   display: flex;
@@ -55,18 +54,13 @@ a {
   justify-content: center;
   align-items: center;
 }
-#navbar nav ul li a .iconNav {
-  fill: #ffffff;
-}
 #navbar nav ul li a p {
   font-weight: bold;
   text-align: center;
 }
 
-div.night {
+#switch {
   cursor: pointer;
-  content: url("../image/Icon feather-moon.svg");
-  border: 4px double #ffffff;
   padding: 0.2%;
   border-radius: 50px;
   width: 20px;
@@ -74,26 +68,85 @@ div.night {
   transition: all ease 0.5s;
 }
 
-div.day {
+#icon_add {
+  margin-top: 6%;
+  border: 1px solid red;
+}
+
+#view_icon {
+  border: 1px solid lime;
+}
+
+#navbar nav ul li a .iconNav {
+  fill: #ffffff;
+}
+#navbar nav ul li.activeNav a {
+  color: #ff0000;
+}
+#navbar nav ul li.activeNav a svg {
+  fill: #880000;
+}
+
+div.night {
+  content: url("../image/Icon feather-moon.svg");
+  border: 4px double #ffffff;
+  transition: all ease 0.5s;
+}
+
+body.day {
+  transition: all ease 0.5s;
+  background: #ffffff;
+  color: #000000;
+}
+body.day #navbar nav ul li a {
+  color: #000000;
+}
+body.day #navbar nav ul li a .iconNav {
+  fill: #000000;
+}
+body.day #navbar nav ul li.iconNav a {
+  color: #880000;
+}
+body.day #navbar nav ul li.iconNav svg {
+  fill: #ff0000;
+}
+body.day div.day {
   content: url("../image/Icon ionic-ios-sunny.svg");
   border: 4px double black;
   transition: all ease 0.5s;
 }
 
-body.day {
-  background: #ffffff;
-  color: #000000;
-}
-
 @media screen and (min-width: 1441px) {
+  #navbar nav {
+    width: 50vw;
+  }
+  #navbar nav ul {
+    width: 95vw;
+  }
   #navbar nav ul li a .iconNav svg {
     width: 2vw;
   }
 }
 @media screen and (max-width: 1440px) {
+  #navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #navbar nav ul {
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
   #navbar nav ul li a .iconNav svg {
     width: 8vw;
-    stroke: #880000;
+  }
+  #navbar nav ul li a .iconNav p {
+    margin-top: 0;
+  }
+  #navbar nav ul li:nth-child(4) {
+    margin-top: 1vw;
   }
 }
 

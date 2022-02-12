@@ -15,6 +15,10 @@ function viewSwitch(){
         switchBtn.classList.remove('night');
         switchBtn.classList.add('day');
         body.classList.add('day');
+    }else{
+        body.classList.remove('day');
+        switchBtn.classList.add('night');
+        switchBtn.classList.remove('day');
     }
 }
 

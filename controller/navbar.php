@@ -7,8 +7,8 @@
 <header id="navbar">
     <nav id="navbar_main">
         <ul>
-            <li>
-                <a href="#">
+            <li class="<?php if($_SESSION['page']=='graph'){echo 'activeNav';}else{echo '';} ?>">
+                <a href="../view/graph.php">
                     <span class="iconNav">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.468 21.468">
                             <path id="Icon_open-graph" data-name="Icon open-graph"
@@ -18,8 +18,8 @@
                     <p>Graph</p>
                 </a>
             </li>
-            <li>
-                <a href="#">
+            <li class="<?php if($_SESSION['page']=='activity'){echo 'activeNav';}else{echo '';} ?>">
+                <a href="../view/activity.php">
                     <span class="iconNav">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
                           <path id="Icon_simple-clockify" data-name="Icon simple-clockify"
@@ -30,8 +30,8 @@
                     <p>Activity</p>
                 </a>
             </li>
-            <li>
-                <a href="#">
+            <li class="<?php if($_SESSION['page']=='color'){echo 'activeNav';}else{echo '';} ?>">
+                <a href="../view/color.php">
                     <span class="iconNav">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
                           <path id="Icon_material-color-lens" data-name="Icon material-color-lens"
@@ -42,8 +42,8 @@
                     <p>Color</p>
                 </a>
             </li>
-            <li>
-                <a href="#">
+            <li class="<?php if($_SESSION['page']=='icon'){echo 'activeNav';}else{echo '';} ?>">
+                <a href="../view/icon.php">
                     <span class="iconNav">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 20">
                           <path id="Icon_awesome-image" data-name="Icon awesome-image"
@@ -60,6 +60,4 @@
     <div id="switch" >
     </div>
 </header>
-<script src="../script/navbar.js"></script>
-</body>
-</html>
+

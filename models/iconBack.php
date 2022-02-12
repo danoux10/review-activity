@@ -4,7 +4,7 @@
 		$bdd = new PDO('mysql:host=localhost;dbname=review_activity;charset=utf8', 'root', 'password');
 
 //anchor variable icon
-@$add_icon = $_POST['valid'];
+@$add_icon = $_POST['addIcon'];
 
 //link add icon
 if (isset($add_icon)){
