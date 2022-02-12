@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "secret";
+  src: url("../font/top_secret.OTF");
+}
+@font-face {
+  font-family: "blade";
+  src: url("../font/blade.TTF");
+}
 body {
   background: #000000;
   color: #ffffff;
@@ -55,7 +63,7 @@ a {
   align-items: center;
 }
 #navbar nav ul li a p {
-  font-weight: bold;
+  font-family: "secret";
   text-align: center;
 }
 
@@ -69,16 +77,70 @@ a {
 }
 
 #icon_add {
-  margin-top: 6%;
-  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#icon_add fieldset {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+#icon_add fieldset legend {
+  padding: 1%;
+  text-align: center;
+  font-weight: bolder;
+}
+#icon_add fieldset label {
+  margin-top: 5%;
+}
+#icon_add fieldset input[type=text] {
+  background: none;
+  border-radius: 5px;
+  padding-left: 0.5%;
+  margin-bottom: 5%;
+}
+#icon_add fieldset input[type=text]:focus {
+  border: 1px solid #ff0000;
+  outline: none;
+}
+#icon_add fieldset button[type=submit] {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: "blade";
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 50px;
+  transition: all ease 0.5s;
+}
+#icon_add fieldset button[type=submit]:hover {
+  transition: all ease 0.5s;
+  color: rgba(255, 0, 0, 0.8);
+  border-bottom: 1px solid #880000;
+  border-right: 1px solid #880000;
 }
 
 #view_icon {
   border: 1px solid lime;
 }
 
+fieldset input[type=text] {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+fieldset button[type=submit] {
+  color: #ffffff;
+  border-color: silver;
+}
+
 #navbar nav ul li a .iconNav {
   fill: #ffffff;
+}
+#navbar nav ul li a p {
+  text-shadow: 2px 2px 2px #000000;
 }
 #navbar nav ul li.activeNav a {
   color: #ff0000;
@@ -104,6 +166,9 @@ body.day #navbar nav ul li a {
 body.day #navbar nav ul li a .iconNav {
   fill: #000000;
 }
+body.day #navbar nav ul li a p {
+  text-shadow: 2px 2px 2px #ffffff;
+}
 body.day #navbar nav ul li.iconNav a {
   color: #880000;
 }
@@ -112,8 +177,29 @@ body.day #navbar nav ul li.iconNav svg {
 }
 body.day div.day {
   content: url("../image/Icon ionic-ios-sunny.svg");
-  border: 4px double black;
+  border: 4px double #000000;
   transition: all ease 0.5s;
+}
+body.day #icon_add fieldset {
+  background: rgba(211, 211, 211, 0.4);
+}
+body.day #icon_add fieldset input[type=text] {
+  border-color: #000000;
+  color: #000000;
+}
+body.day #icon_add fieldset input[type=text]:focus {
+  outline: none;
+  border-color: #880000;
+}
+body.day #icon_add fieldset button[type=submit] {
+  border-color: #000000;
+  color: #000000;
+}
+body.day #icon_add fieldset button[type=submit]:hover {
+  color: #880000;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #880000;
+  border-right: 1px solid #880000;
 }
 
 @media screen and (min-width: 1441px) {
@@ -125,6 +211,13 @@ body.day div.day {
   }
   #navbar nav ul li a .iconNav svg {
     width: 2vw;
+  }
+
+  #icon_add {
+    margin-top: 6vw;
+  }
+  #icon_add fieldset button[type=submit] {
+    font-size: 1.5vw;
   }
 }
 @media screen and (max-width: 1440px) {
@@ -147,6 +240,22 @@ body.day div.day {
   }
   #navbar nav ul li:nth-child(4) {
     margin-top: 1vw;
+  }
+
+  #icon_add {
+    margin-top: 20vw;
+  }
+  #icon_add fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #icon_add fieldset input[type=text] {
+    margin: 1.5% 0;
+  }
+  #icon_add fieldset button[type=submit] {
+    width: 10vw;
   }
 }
 

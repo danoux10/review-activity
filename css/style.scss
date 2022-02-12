@@ -1,4 +1,15 @@
-//anchor color déclaration
+//anchor font declaration
+@font-face{
+  font-family: 'secret';
+  src:url('../font/top_secret.OTF');
+}
+
+@font-face{
+  font-family: 'blade';
+  src:url('../font/blade.TTF');
+}
+
+//anchor color declaration
 $black: #000000;
 $white: #ffffff;
 $red: #ff0000;
@@ -11,10 +22,12 @@ body {
   font-family: sans-serif;
   transition: all ease .5s;
 }
+
 //reset
 a {
   text-decoration: none;
 }
+
 ul, ol {
   list-style: none;
 }
@@ -23,6 +36,7 @@ ul, ol {
 .hidden {
   display: none;
 }
+
 .show {
   display: block;
 }
@@ -31,6 +45,7 @@ ul, ol {
 a {
   color: white;
 }
+
 .scroll_active {
   transition: all ease 1s;
 
@@ -60,16 +75,14 @@ a {
       display: flex;
       align-items: center;
       justify-content: space-around;
-
       li {
         a {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-
           p {
-            font-weight: bold;
+            font-family: 'secret';
             text-align: center;
           }
         }
@@ -91,17 +104,71 @@ a {
 //link icon general
 //fixme ici
 //anchor form add
-#icon_add{
-  margin-top: 6%;
-  border: 1px solid red;
+#icon_add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fieldset {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    legend {
+      padding: 1%;
+      text-align: center;
+      font-weight: bolder;
+    }
+    label{
+      margin-top: 5%;
+    }
+    input[type='text'] {
+      background: none;
+      border-radius: 5px;
+      padding-left: .5%;
+      margin-bottom: 5%;
+      &:focus{
+        border: 1px solid $red;
+        outline: none;
+      }
+    }
+    button[type='submit'] {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: 'blade';
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+      border-radius: 50px;
+      transition: all ease .5s;
+      &:hover{
+        transition: all ease .5s;
+        color: rgba($red,.8);
+        border-bottom: 1px solid $darkred;
+        border-right: 1px solid $darkred;
+      }
+    }
+  }
 }
 
 //anchor preview
-#view_icon{
+#view_icon {
   border: 1px solid lime;
 }
+
 //link night
-//anchor navbar
+//sublink general
+fieldset {
+  input[type='text'] {
+    border: 1px solid $white;
+    color: $white;
+  }
+  button[type='submit'] {
+    color: $white;
+    border-color: silver;
+  }
+}
+//sublink navbar
 #navbar {
   nav {
     ul {
@@ -110,13 +177,14 @@ a {
           .iconNav {
             fill: $white;
           }
+          p{
+            text-shadow: 2px 2px 2px $black;
+          }
         }
       }
-
       li.activeNav {
         a {
           color: $red;
-
           svg {
             fill: $darkred;
           }
@@ -125,34 +193,33 @@ a {
     }
   }
 }
-//anchor icon
-//fixme ici ossi
-//anchor switch
+//sublink switch
 div.night {
   content: url("../image/Icon feather-moon.svg");
   border: 4px double $white;
   transition: all ease .5s;
 }
 
-//link day/night
+//link day
 body.day {
   transition: all ease .5s;
   background: $white;
   color: $black;
-  //anchor navbar day
+  //sublink navbar day
   #navbar {
     nav {
       ul {
         li {
           a {
             color: $black;
-
             .iconNav {
               fill: $black;
             }
+            p{
+              text-shadow: 2px 2px 2px $white;
+            }
           }
         }
-
         li.iconNav {
           a {
             color: $darkred;
@@ -166,25 +233,48 @@ body.day {
     }
   }
 
-  //anchor swicth
+  //sublink swicth
   div.day {
     content: url("../image/Icon ionic-ios-sunny.svg");
-    border: 4px double black;
+    border: 4px double $black;
     transition: all ease .5s;
+  }
+  //sublink icon
+  #icon_add{
+    fieldset{
+      background: rgba(lightgrey,.4);
+      input[type='text']{
+        border-color: $black;
+        color: $black;
+        &:focus{
+          outline: none;
+          border-color: $darkred;
+        }
+      }
+      button[type='submit']{
+        border-color: $black;
+        color: $black;
+        &:hover{
+          color: $darkred;
+          background: rgb($black,.2);
+          border-bottom: 1px solid $darkred;
+          border-right: 1px solid $darkred;
+        }
+      }
+    }
   }
 }
 
-//anchor resposive
+//Link resposive
 //anchor desktop
 @media screen and (min-width: 1441px) {
-  //Link navbar large
+  //sublink general
+  //subLink navbar large
   #navbar {
     nav {
       width: 50vw;
-
       ul {
         width: 95vw;
-
         li {
           a {
             .iconNav {
@@ -197,17 +287,27 @@ body.day {
       }
     }
   }
-  //Link icon lage
+  //subLink icon large
+  #icon_add{
+    margin-top: 6vw;
+    fieldset{
+      button[type='submit']{
+        font-size: 1.5vw;
+      }
+    }
+  }
 }
 
 //anchor mobile
 @media screen and (max-width: 1440px) {
+  body{
+    //background: blue;
+  }
   //Link navbar small
   #navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-
     nav {
       ul {
         width: 70vw;
@@ -236,6 +336,21 @@ body.day {
     }
   }
   // link icon small
+  #icon_add{
+    margin-top: 20vw;
+    fieldset{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      input[type='text']{
+        margin: 1.5% 0;
+      }
+      button[type='submit']{
+        width: 10vw;
+      }
+    }
+  }
 }
 
 

@@ -10,8 +10,9 @@
         <fieldset>
             <legend>Add Icon</legend>
             <input type="file" name="icon" accept=".svg" required>
-            <input type="text" name="iconName">
-            <button type="submit" name="addIcon">Ajouter</button>
+            <label for="iconAddName">Icon name</label>
+            <input type="text" name="iconName" placeholder="Icon name" id="iconAddName">
+            <button type="submit" name="addIcon">Add</button>
         </fieldset>
     </form>
 </div>
