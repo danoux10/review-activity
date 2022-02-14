@@ -32,7 +32,7 @@ ul, ol {
   list-style: none;
 }
 
-//general
+//anchor general
 .hidden {
   display: none;
 }
@@ -41,9 +41,43 @@ ul, ol {
   display: block;
 }
 
-.empty{}
+.empty {
+}
 
-//anchor general
+.scroll {
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 0;
+    border: 1px solid;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 6px;
+    border-radius: 50px;
+    background: black;
+  }
+}
+
+button[type='submit'] {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'blade';
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 50px;
+  transition: all ease .5s;
+  &:hover {
+    transition: all ease .5s;
+    color: rgba($red, .8);
+    border-bottom: 1px solid $darkred;
+    border-right: 1px solid $darkred;
+  }
+}
+
 a {
   color: white;
 }
@@ -84,6 +118,7 @@ a {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+
           p {
             font-family: 'secret';
             text-align: center;
@@ -105,13 +140,13 @@ a {
 }
 
 //link icon general
-//fixme ici
 //anchor form add
 #icon_add {
   display: flex;
   justify-content: center;
   align-items: center;
-  #showAddIcon{
+
+  #showAddIcon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,22 +154,27 @@ a {
     border-radius: 50px;
     cursor: pointer;
     padding: .4%;
-    svg{
+
+    svg {
       width: 20px;
       height: 20px;
     }
-    #iconShow{
+
+    #iconShow {
       display: none;
     }
   }
-  #showAddIcon.active{
-    #iconhidden{
+
+  #showAddIcon.active {
+    #iconhidden {
       display: none;
     }
-    #iconShow{
+
+    #iconShow {
       display: block;
     }
   }
+
   fieldset {
     display: flex;
     justify-content: center;
@@ -166,30 +206,80 @@ a {
   }
 }
 
-button[type='submit'] {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: 'blade';
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  border-radius: 50px;
-  transition: all ease .5s;
-
-  &:hover {
-    transition: all ease .5s;
-    color: rgba($red, .8);
-    border-bottom: 1px solid $darkred;
-    border-right: 1px solid $darkred;
-  }
-}
-//anchor preview
+//anchor view
 #view_icon {
-  border: 1px solid lime;
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  //height: 75vh;
+  #iconContent {
+    margin-top: .2%;
+    height: 75vh;
+    width: 95%;
+    display: grid;
+    align-content: start;
+    padding: .5%;
+    span {
+      //border: 1px solid;
+      padding: 1%;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      input[type='radio'] {
+        display: none;
+
+        &:checked {
+          ~ label {
+            border: 1px solid;
+            height: 40px;
+            padding: 10%;
+            border-radius: 10px;
+            background: rgba($red,.4);
+            .iconView {
+              filter: invert(100%);
+            }
+          }
+        }
+      }
+
+      label {
+        cursor: pointer;
+        .iconView {
+          width: 40px;
+          height: 40px;
+          margin: 1% 0;
+        }
+      }
+    }
+  }
+
+  button[type='submit'] {
+    width: 3vw;
+    font-size: 1.3vw;
+    width: auto;
+    margin: .2% 0 .4% 0;
+  }
 }
 
 //link night
 //sublink general
+.scroll {
+  &::-webkit-scrollbar {
+    border-color: $white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($white, .9);
+  }
+}
+button[type='submit']{
+  color: $white;
+}
 fieldset {
   input[type='text'] {
     border: 1px solid $white;
@@ -223,7 +313,7 @@ fieldset {
           color: $red;
 
           svg {
-            fill: $darkred;
+            fill: rgba($red, .7);
           }
         }
       }
@@ -237,21 +327,55 @@ div.night {
   border: 4px double $white;
   transition: all ease .5s;
 }
-#icon_add{
-  #showAddIcon{
+
+//sublink icon night
+//anchor add
+#icon_add {
+  #showAddIcon {
     border-color: $white;
-    svg{
+
+    svg {
       fill: $white;
     }
   }
 }
+
+//anchor view
+#view_icon {
+  #iconContent {
+    background: dimgrey;
+  }
+}
+
 
 //link day
 body.day {
   transition: all ease .5s;
   background: $white;
   color: $black;
-  //sublink navbar day
+  //sublink general
+  button[type='submit'] {
+    border-color: $black;
+    color: $black;
+    &:hover {
+      color: $darkred;
+      background: rgb($black, .2);
+      border-bottom: 1px solid $darkred;
+      border-right: 1px solid $darkred;
+    }
+  }
+
+  .scroll {
+    &::-webkit-scrollbar {
+      border-color: $black;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($black, .8);
+    }
+  }
+
+  //sublink navbar
   #navbar {
     nav {
       ul {
@@ -269,13 +393,14 @@ body.day {
           }
         }
 
-        li.iconNav {
+        li.activeNav {
           a {
             p {
               color: $darkred;
             }
+
             svg {
-              fill: $red;
+              fill: $darkred;
             }
           }
         }
@@ -291,15 +416,19 @@ body.day {
   }
 
   //sublink icon
+  //anchor add
   #icon_add {
-    #showAddIcon{
+    #showAddIcon {
       border-color: $black;
-      svg{
-        fill:$black;
+
+      svg {
+        fill: $black;
       }
     }
+
     fieldset {
       background: rgba(lightgrey, .4);
+
       input[type='text'] {
         border-color: $black;
         color: $black;
@@ -309,18 +438,13 @@ body.day {
           border-color: $darkred;
         }
       }
+    }
+  }
 
-      button[type='submit'] {
-        border-color: $black;
-        color: $black;
-
-        &:hover {
-          color: $darkred;
-          background: rgb($black, .2);
-          border-bottom: 1px solid $darkred;
-          border-right: 1px solid $darkred;
-        }
-      }
+  //anchor view
+  #view_icon {
+    #iconContent {
+      background: gray;
     }
   }
 }
@@ -350,20 +474,29 @@ body.day {
     }
   }
   //subLink icon large
+  //anchor add
   #icon_add {
     margin-top: 6vw;
-    #showAddIcon{
-      &:hover{
-        background: rgba($white,.7);
-        svg{
+
+    #showAddIcon {
+      &:hover {
+        background: rgba($white, .7);
+        svg {
           fill: $black;
         }
       }
     }
+
     fieldset {
       button[type='submit'] {
         font-size: 1.5vw;
       }
+    }
+  }
+  //anchor view
+  #view_icon {
+    #iconContent {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
     }
   }
 }
@@ -371,7 +504,7 @@ body.day {
 //anchor mobile
 @media screen and (max-width: 1440px) {
   body {
-    background: blue;
+    //background: blue;
   }
   //subLink navbar small
   #navbar {
@@ -407,11 +540,14 @@ body.day {
     }
   }
   // sublink icon small
+  //anchor add
   #icon_add {
     margin-top: 20vw;
-    #showAddIcon.active{
+
+    #showAddIcon.active {
       margin-top: 5vw;
     }
+
     fieldset {
       display: flex;
       justify-content: center;
@@ -423,12 +559,22 @@ body.day {
       }
 
       button[type='submit'] {
-        font-size: 3vw;
-        width: 6vw;
+        font-size: 5vw;
+        width: 10vw;
+      }
+    }
+  }
+  //anchor view
+  #view_icon{
+    button[type='submit']{
+      font-size: 5vw;
+    }
+    #iconContent{
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      label{
       }
     }
   }
 }
-
 
 

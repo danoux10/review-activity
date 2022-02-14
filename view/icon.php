@@ -30,6 +30,6 @@
 </div>
 <div id="view_icon">
  <?php echo selectIcon();?>
- <button name="deleteIcon" type="submit">Delete Icon</button>
+ <button type="submit" name="deleteIcon">Delete Icon</button>
 </div>
 <?php include_once '../controller/footer.php'; ?>

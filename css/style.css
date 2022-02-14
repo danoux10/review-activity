@@ -29,6 +29,38 @@ ul, ol {
   display: block;
 }
 
+.scroll {
+  overflow: scroll;
+}
+.scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 0;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.scroll::-webkit-scrollbar-thumb {
+  width: 6px;
+  border-radius: 50px;
+  background: black;
+}
+
+button[type=submit] {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: "blade";
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 50px;
+  transition: all ease 0.5s;
+}
+button[type=submit]:hover {
+  transition: all ease 0.5s;
+  color: rgba(255, 0, 0, 0.8);
+  border-bottom: 1px solid #880000;
+  border-right: 1px solid #880000;
+}
+
 a {
   color: white;
 }
@@ -129,25 +161,67 @@ a {
   outline: none;
 }
 
-button[type=submit] {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: "blade";
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  border-radius: 50px;
-  transition: all ease 0.5s;
+#view_icon {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
 }
-button[type=submit]:hover {
-  transition: all ease 0.5s;
-  color: rgba(255, 0, 0, 0.8);
-  border-bottom: 1px solid #880000;
-  border-right: 1px solid #880000;
+#view_icon #iconContent {
+  margin-top: 0.2%;
+  height: 75vh;
+  width: 95%;
+  display: grid;
+  align-content: start;
+  padding: 0.5%;
+}
+#view_icon #iconContent span {
+  padding: 1%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+#view_icon #iconContent span input[type=radio] {
+  display: none;
+}
+#view_icon #iconContent span input[type=radio]:checked ~ label {
+  border: 1px solid;
+  height: 40px;
+  padding: 10%;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.4);
+}
+#view_icon #iconContent span input[type=radio]:checked ~ label .iconView {
+  filter: invert(100%);
+}
+#view_icon #iconContent span label {
+  cursor: pointer;
+}
+#view_icon #iconContent span label .iconView {
+  width: 40px;
+  height: 40px;
+  margin: 1% 0;
+}
+#view_icon button[type=submit] {
+  width: 3vw;
+  font-size: 1.3vw;
+  width: auto;
+  margin: 0.2% 0 0.4% 0;
 }
 
-#view_icon {
-  border: 1px solid lime;
+.scroll::-webkit-scrollbar {
+  border-color: #ffffff;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+button[type=submit] {
+  color: #ffffff;
 }
 
 fieldset input[type=text] {
@@ -169,7 +243,7 @@ fieldset button[type=submit] {
   color: #ff0000;
 }
 #navbar nav ul li.activeNav a svg {
-  fill: #880000;
+  fill: rgba(255, 0, 0, 0.7);
 }
 
 div.night {
@@ -185,10 +259,30 @@ div.night {
   fill: #ffffff;
 }
 
+#view_icon #iconContent {
+  background: dimgrey;
+}
+
 body.day {
   transition: all ease 0.5s;
   background: #ffffff;
   color: #000000;
+}
+body.day button[type=submit] {
+  border-color: #000000;
+  color: #000000;
+}
+body.day button[type=submit]:hover {
+  color: #880000;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #880000;
+  border-right: 1px solid #880000;
+}
+body.day .scroll::-webkit-scrollbar {
+  border-color: #000000;
+}
+body.day .scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.8);
 }
 body.day #navbar nav ul li a {
   color: #000000;
@@ -199,11 +293,11 @@ body.day #navbar nav ul li a .iconNav {
 body.day #navbar nav ul li a p {
   text-shadow: 2px 2px 2px #ffffff;
 }
-body.day #navbar nav ul li.iconNav a p {
+body.day #navbar nav ul li.activeNav a p {
   color: #880000;
 }
-body.day #navbar nav ul li.iconNav a svg {
-  fill: #ff0000;
+body.day #navbar nav ul li.activeNav a svg {
+  fill: #880000;
 }
 body.day div.day {
   content: url("../image/Icon ionic-ios-sunny.svg");
@@ -227,15 +321,8 @@ body.day #icon_add fieldset input[type=text]:focus {
   outline: none;
   border-color: #880000;
 }
-body.day #icon_add fieldset button[type=submit] {
-  border-color: #000000;
-  color: #000000;
-}
-body.day #icon_add fieldset button[type=submit]:hover {
-  color: #880000;
-  background: rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid #880000;
-  border-right: 1px solid #880000;
+body.day #view_icon #iconContent {
+  background: gray;
 }
 
 @media screen and (min-width: 1441px) {
@@ -261,12 +348,12 @@ body.day #icon_add fieldset button[type=submit]:hover {
   #icon_add fieldset button[type=submit] {
     font-size: 1.5vw;
   }
+
+  #view_icon #iconContent {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
 }
 @media screen and (max-width: 1440px) {
-  body {
-    background: blue;
-  }
-
   #navbar {
     display: flex;
     justify-content: center;
@@ -304,8 +391,15 @@ body.day #icon_add fieldset button[type=submit]:hover {
     margin: 1.5% 0;
   }
   #icon_add fieldset button[type=submit] {
-    font-size: 3vw;
-    width: 6vw;
+    font-size: 5vw;
+    width: 10vw;
+  }
+
+  #view_icon button[type=submit] {
+    font-size: 5vw;
+  }
+  #view_icon #iconContent {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 
