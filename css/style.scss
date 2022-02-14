@@ -1,12 +1,12 @@
 //anchor font declaration
-@font-face{
+@font-face {
   font-family: 'secret';
-  src:url('../font/top_secret.OTF');
+  src: url('../font/top_secret.OTF');
 }
 
-@font-face{
+@font-face {
   font-family: 'blade';
-  src:url('../font/blade.TTF');
+  src: url('../font/blade.TTF');
 }
 
 //anchor color declaration
@@ -40,6 +40,8 @@ ul, ol {
 .show {
   display: block;
 }
+
+.empty{}
 
 //anchor general
 a {
@@ -75,6 +77,7 @@ a {
       display: flex;
       align-items: center;
       justify-content: space-around;
+
       li {
         a {
           display: flex;
@@ -91,7 +94,7 @@ a {
   }
 }
 
-//link switch general
+//anchor switch general
 #switch {
   cursor: pointer;
   padding: .2%;
@@ -108,49 +111,78 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  #showAddIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: .4%;
+    svg{
+      width: 20px;
+      height: 20px;
+    }
+    #iconShow{
+      display: none;
+    }
+  }
+  #showAddIcon.active{
+    #iconhidden{
+      display: none;
+    }
+    #iconShow{
+      display: block;
+    }
+  }
   fieldset {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+
     legend {
       padding: 1%;
       text-align: center;
       font-weight: bolder;
     }
-    label{
+
+    label {
       margin-top: 5%;
     }
+
     input[type='text'] {
       background: none;
       border-radius: 5px;
       padding-left: .5%;
       margin-bottom: 5%;
-      &:focus{
+
+      &:focus {
         border: 1px solid $red;
         outline: none;
-      }
-    }
-    button[type='submit'] {
-      cursor: pointer;
-      border: none;
-      background: none;
-      font-family: 'blade';
-      border-right: 1px solid;
-      border-bottom: 1px solid;
-      border-radius: 50px;
-      transition: all ease .5s;
-      &:hover{
-        transition: all ease .5s;
-        color: rgba($red,.8);
-        border-bottom: 1px solid $darkred;
-        border-right: 1px solid $darkred;
       }
     }
   }
 }
 
+button[type='submit'] {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'blade';
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 50px;
+  transition: all ease .5s;
+
+  &:hover {
+    transition: all ease .5s;
+    color: rgba($red, .8);
+    border-bottom: 1px solid $darkred;
+    border-right: 1px solid $darkred;
+  }
+}
 //anchor preview
 #view_icon {
   border: 1px solid lime;
@@ -163,11 +195,13 @@ fieldset {
     border: 1px solid $white;
     color: $white;
   }
+
   button[type='submit'] {
     color: $white;
     border-color: silver;
   }
 }
+
 //sublink navbar
 #navbar {
   nav {
@@ -177,14 +211,17 @@ fieldset {
           .iconNav {
             fill: $white;
           }
-          p{
+
+          p {
             text-shadow: 2px 2px 2px $black;
           }
         }
       }
+
       li.activeNav {
         a {
           color: $red;
+
           svg {
             fill: $darkred;
           }
@@ -193,11 +230,20 @@ fieldset {
     }
   }
 }
+
 //sublink switch
 div.night {
   content: url("../image/Icon feather-moon.svg");
   border: 4px double $white;
   transition: all ease .5s;
+}
+#icon_add{
+  #showAddIcon{
+    border-color: $white;
+    svg{
+      fill: $white;
+    }
+  }
 }
 
 //link day
@@ -212,21 +258,25 @@ body.day {
         li {
           a {
             color: $black;
+
             .iconNav {
               fill: $black;
             }
-            p{
+
+            p {
               text-shadow: 2px 2px 2px $white;
             }
           }
         }
+
         li.iconNav {
           a {
-            color: $darkred;
-          }
-
-          svg {
-            fill: $red;
+            p {
+              color: $darkred;
+            }
+            svg {
+              fill: $red;
+            }
           }
         }
       }
@@ -239,24 +289,34 @@ body.day {
     border: 4px double $black;
     transition: all ease .5s;
   }
+
   //sublink icon
-  #icon_add{
-    fieldset{
-      background: rgba(lightgrey,.4);
-      input[type='text']{
+  #icon_add {
+    #showAddIcon{
+      border-color: $black;
+      svg{
+        fill:$black;
+      }
+    }
+    fieldset {
+      background: rgba(lightgrey, .4);
+      input[type='text'] {
         border-color: $black;
         color: $black;
-        &:focus{
+
+        &:focus {
           outline: none;
           border-color: $darkred;
         }
       }
-      button[type='submit']{
+
+      button[type='submit'] {
         border-color: $black;
         color: $black;
-        &:hover{
+
+        &:hover {
           color: $darkred;
-          background: rgb($black,.2);
+          background: rgb($black, .2);
           border-bottom: 1px solid $darkred;
           border-right: 1px solid $darkred;
         }
@@ -273,8 +333,10 @@ body.day {
   #navbar {
     nav {
       width: 50vw;
+
       ul {
         width: 95vw;
+
         li {
           a {
             .iconNav {
@@ -288,10 +350,18 @@ body.day {
     }
   }
   //subLink icon large
-  #icon_add{
+  #icon_add {
     margin-top: 6vw;
-    fieldset{
-      button[type='submit']{
+    #showAddIcon{
+      &:hover{
+        background: rgba($white,.7);
+        svg{
+          fill: $black;
+        }
+      }
+    }
+    fieldset {
+      button[type='submit'] {
         font-size: 1.5vw;
       }
     }
@@ -300,14 +370,15 @@ body.day {
 
 //anchor mobile
 @media screen and (max-width: 1440px) {
-  body{
-    //background: blue;
+  body {
+    background: blue;
   }
-  //Link navbar small
+  //subLink navbar small
   #navbar {
     display: flex;
     justify-content: center;
     align-items: center;
+
     nav {
       ul {
         width: 70vw;
@@ -335,19 +406,25 @@ body.day {
       }
     }
   }
-  // link icon small
-  #icon_add{
+  // sublink icon small
+  #icon_add {
     margin-top: 20vw;
-    fieldset{
+    #showAddIcon.active{
+      margin-top: 5vw;
+    }
+    fieldset {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      input[type='text']{
+
+      input[type='text'] {
         margin: 1.5% 0;
       }
-      button[type='submit']{
-        width: 10vw;
+
+      button[type='submit'] {
+        font-size: 3vw;
+        width: 6vw;
       }
     }
   }
