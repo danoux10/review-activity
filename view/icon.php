@@ -28,8 +28,8 @@
         </fieldset>
     </form>
 </div>
-<div id="view_icon">
+<form method="post" id="view_icon">
  <?php echo selectIcon();?>
  <button type="submit" name="deleteIcon">Delete Icon</button>
-</div>
+</form>
 <?php include_once '../controller/footer.php'; ?>

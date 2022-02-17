@@ -21,6 +21,11 @@ ul, ol {
   list-style: none;
 }
 
+fieldset legend {
+  text-transform: uppercase;
+  font-family: cursive;
+}
+
 .hidden {
   display: none;
 }
@@ -70,9 +75,6 @@ a {
 }
 #navbar {
   transition: all ease 0.5s;
-  position: fixed;
-  left: 0vw;
-  top: 0vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -164,13 +166,13 @@ a {
 #view_icon {
   margin-top: 1%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column-reverse;
 }
 #view_icon #iconContent {
   margin-top: 0.2%;
-  height: 75vh;
+  height: 70vh;
   width: 95%;
   display: grid;
   align-content: start;
@@ -207,10 +209,191 @@ a {
   margin: 1% 0;
 }
 #view_icon button[type=submit] {
-  width: 3vw;
   font-size: 1.3vw;
   width: auto;
   margin: 0.2% 0 0.4% 0;
+}
+
+#colorForm {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+#colorForm .formContent .showHiddenColor {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: start;
+}
+#colorForm .formContent .showHiddenColor .s\&hBtn {
+  cursor: pointer;
+  border: 1px solid;
+  padding: 2%;
+  border-radius: 50px;
+}
+#colorForm .formContent #color_add, #colorForm .formContent #color_update {
+  border-radius: 10px;
+}
+#colorForm .formContent #color_add legend, #colorForm .formContent #color_update legend {
+  width: auto;
+  text-align: center;
+}
+#colorForm .formContent #color_add form, #colorForm .formContent #color_update form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#colorForm .formContent #color_add form div, #colorForm .formContent #color_update form div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: center;
+  align-items: center;
+  margin: 5% 0;
+  text-align: center;
+}
+#colorForm .formContent #color_add form div label, #colorForm .formContent #color_add form div input, #colorForm .formContent #color_update form div label, #colorForm .formContent #color_update form div input {
+  cursor: pointer;
+}
+#colorForm .formContent #color_add form div input[type=color], #colorForm .formContent #color_update form div input[type=color] {
+  border: none;
+  background: none;
+}
+#colorForm .formContent #color_add form div .slide, #colorForm .formContent #color_update form div .slide {
+  display: flex;
+}
+#colorForm .formContent #color_add form div .slide input[type=checkbox], #colorForm .formContent #color_update form div .slide input[type=checkbox] {
+  display: none;
+}
+#colorForm .formContent #color_add form div .slide label, #colorForm .formContent #color_update form div .slide label {
+  transition: all ease 0.5s;
+  border: 1px solid;
+  border-radius: 50px;
+  width: 100%;
+  padding: 0.5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#colorForm .formContent #color_add form div .slide label .cercle, #colorForm .formContent #color_update form div .slide label .cercle {
+  border: 1px solid;
+  background: grey;
+  border-radius: 50px;
+  width: 15px;
+  height: 15px;
+  margin: 0.5%;
+}
+#colorForm .formContent #color_add form div .slide input[type=checkbox]:checked ~ label, #colorForm .formContent #color_update form div .slide input[type=checkbox]:checked ~ label {
+  justify-content: flex-end;
+}
+#colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn {
+  display: flex;
+  justify-content: space-around;
+}
+#colorForm .previewColor {
+  margin: 0 5% 0;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+#colorForm .previewColor h2 {
+  font-family: cursive;
+  text-align: center;
+  cursor: pointer;
+}
+#colorForm .previewColor h2:after {
+  margin: 0 0 0 5%;
+  font-size: xx-large;
+  align-items: center;
+  text-align: center;
+}
+#colorForm .previewColor h2.active:after {
+  content: "-";
+}
+#colorForm .previewColor h2.desactive:after {
+  content: "+";
+}
+#colorForm .previewColor .colorPreviewBody {
+  height: 20vh;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+#colorForm .previewColor .colorPreviewBody .colorPreviewInside {
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+}
+#colorForm .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText {
+  text-transform: uppercase;
+}
+
+#view_color {
+  margin: 1% 0 0;
+  width: 95%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column-reverse;
+  padding: 0.5%;
+}
+#view_color .color_containt {
+  display: grid;
+  border: 1px solid;
+  width: 95%;
+  height: 50vh;
+  padding: 1%;
+}
+#view_color .color_containt span.container {
+  margin: 0 5% 0;
+  border-radius: 20px;
+  height: 17vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#view_color .color_containt span.container input[type=radio] {
+  display: none;
+}
+#view_color .color_containt span.container input[type=radio]:checked ~ .infoColor {
+  transition: all ease 0.5s;
+  display: block;
+}
+#view_color .color_containt span.container label {
+  cursor: pointer;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#view_color .color_containt span.container .infoColor {
+  display: none;
+  margin: 0 0 0 2.5%;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding: 1%;
+}
+#view_color .color_containt span.container .infoColor div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 5% 0;
+  border-bottom: 1px solid;
+}
+#view_color .color_containt span.container .infoColor div p {
+  margin: 0.5% 0;
+}
+#view_color button[type=submit] {
+  font-size: 1.5vw;
+  margin: 0 0 0.5% 0;
 }
 
 .scroll::-webkit-scrollbar {
@@ -263,7 +446,31 @@ div.night {
   background: dimgrey;
 }
 
+#colorForm .formContent .showHiddenColor .active {
+  background: rgba(255, 255, 255, 0.4);
+}
+#colorForm .formContent .showHiddenColor .active svg {
+  fill: #ffffff;
+}
+#colorForm .formContent .showHiddenColor .desactive {
+  border-color: #ffffff;
+}
+#colorForm .formContent .showHiddenColor .desactive svg {
+  fill: #ffffff;
+}
+#colorForm #color_add form div .slide label {
+  border-color: #ffffff;
+  background: #880000;
+}
+#colorForm #color_add form div .slide label .cercle {
+  border-color: #ffffff;
+}
+#colorForm #color_add form div input[type=checkbox]:checked ~ label {
+  background: green;
+}
+
 body.day {
+  font-weight: bolder;
   transition: all ease 0.5s;
   background: #ffffff;
   color: #000000;
@@ -324,6 +531,29 @@ body.day #icon_add fieldset input[type=text]:focus {
 body.day #view_icon #iconContent {
   background: gray;
 }
+body.day #colorForm .formContent .showHiddenColor .active {
+  background: rgba(0, 0, 0, 0.4);
+}
+body.day #colorForm .formContent .showHiddenColor .active svg {
+  fill: #000000;
+}
+body.day #colorForm .formContent .showHiddenColor .desactive {
+  border-color: #000000;
+}
+body.day #colorForm .formContent .showHiddenColor .desactive svg {
+  fill: #000000;
+}
+body.day #colorForm #color_add form div .slide label {
+  border-color: #000000;
+  background: #ff0000;
+}
+body.day #colorForm #color_add form div .slide label .cercle {
+  border-color: #000000;
+  background: lightgray;
+}
+body.day #colorForm #color_add form div input[type=checkbox]:checked ~ label {
+  background: #009e08;
+}
 
 @media screen and (min-width: 1441px) {
   #navbar nav {
@@ -336,9 +566,6 @@ body.day #view_icon #iconContent {
     width: 2vw;
   }
 
-  #icon_add {
-    margin-top: 6vw;
-  }
   #icon_add #showAddIcon:hover {
     background: rgba(255, 255, 255, 0.7);
   }
@@ -350,6 +577,39 @@ body.day #view_icon #iconContent {
   }
 
   #view_icon #iconContent {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  #colorForm .formContent {
+    width: 15%;
+  }
+  #colorForm .formContent .showHiddenColor .s\&hBtn {
+    margin-bottom: 5%;
+  }
+  #colorForm .formContent .showHiddenColor .s\&hBtn svg {
+    width: 1vw;
+  }
+  #colorForm .formContent #color_add form div input[type=color], #colorForm .formContent #color_update form div input[type=color] {
+    width: 40px;
+    height: 40px;
+  }
+  #colorForm .formContent #color_add form div .slide, #colorForm .formContent #color_update form div .slide {
+    width: 3vw;
+  }
+  #colorForm .formContent #color_add form div .slide label, #colorForm .formContent #color_update form div .slide label {
+    height: 20px;
+  }
+  #colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn {
+    width: 95%;
+  }
+  #colorForm .formContent #color_add form div.btn button[type=submit], #colorForm .formContent #color_update form div.btn button[type=submit] {
+    font-size: 30px;
+  }
+  #colorForm .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText {
+    font-size: xx-large;
+  }
+
+  #view_color .color_containt {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 }
@@ -400,6 +660,32 @@ body.day #view_icon #iconContent {
   }
   #view_icon #iconContent {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  #colorForm .formContent {
+    width: 75%;
+  }
+  #colorForm .formContent .showHiddenColor .s\&hBtn {
+    margin-bottom: 2%;
+  }
+  #colorForm .formContent .showHiddenColor .s\&hBtn svg {
+    width: 4vw;
+  }
+  #colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn {
+    width: 98%;
+  }
+  #colorForm .formContent #color_add form div.btn button[type=submit], #colorForm .formContent #color_update form div.btn button[type=submit] {
+    font-size: 5vw;
+  }
+  #view_color .color_containt {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 25%;
+  }
+  #view_color .color_containt span.container {
+    border: 1px solid pink;
+    width: 20vw;
+  }
+  #view_color button[type=submit] {
+    font-size: 5vw;
   }
 }
 

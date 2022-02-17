@@ -19,5 +19,5 @@
 	<link rel="stylesheet" href="../css/style.css">
     <title><?php echo $_SESSION['page'] ?></title>
 </head>
-<body>
+<body class="scroll">
 <?php include_once '../controller/navbar.php'?>

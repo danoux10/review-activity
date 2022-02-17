@@ -1,20 +1,8 @@
 <?php
-		//fixme varibale commune page
-		$bdd = new PDO('mysql:host=localhost;dbname=review_activity;charset=utf8', 'root', 'password');
-
 //anchor declatation variable color
 @$add_color = $_POST['addColor'];
 @$preview_color = $_POST['preview'];
 
-//anchor defaut value
-		$_SESSION['back'] = '#ff0000';
-		$_SESSION['fill'] = '#00ff00';
-		$_SESSION['border'] = '#00ffff';
-		$_SESSION['color'] = '#ff00ff';
-		
-		$actBack ='on';
-		$actFill ='on';
-		$actBorder ='on';
 		//link add color
 if (isset($add_color)){
 		@$color = $_POST['textColor'];
@@ -79,4 +67,5 @@ if (isset($preview_color)){
 		@$_SESSION['back']=$back;
 		@$_SESSION['fill']=$fill;
 		@$_SESSION['border']=$border;
+
 }

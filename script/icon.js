@@ -2,8 +2,6 @@
 var toggleAdd = document.getElementById('showAddIcon');
 var viewAdd = document.getElementById('iconFormAdd');
 
-toggleAdd.classList.add('active');
-viewAdd.classList.add('hidden');
 
 function toggleViewAdd(){
     if (toggleAdd.classList.contains('empty')){
