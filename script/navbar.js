@@ -10,6 +10,7 @@ var switchBtn = document.getElementById('switch');
 
 switchBtn.classList.add('night');
 
+
 function viewSwitch(){
     if(switchBtn.classList.contains('night')){
         switchBtn.classList.remove('night');

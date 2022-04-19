@@ -1,8 +1,5 @@
-<!--<link rel="stylesheet" href="../css/style.css">-->
 <?php
- // include '../config/bdd.php';
  @$iconSelect = $_SESSION['selectIcon'];
- // @$iconSelect = 0;
  
  function selectIcon()
  {
@@ -34,4 +31,3 @@
   return $selecIcon;
  }
  
- // echo selectIcon();

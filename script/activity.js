@@ -1,9 +1,9 @@
-// toggle form
+//switch add/update
 var addBtn = document.getElementById('addBtn');
 var updateBtn = document.getElementById('updateBtn');
 
-var addView = document.getElementById('color_add');
-var updateView = document.getElementById('color_update');
+var addView = document.getElementById('add_Act');
+var updateView = document.getElementById('update_Act');
 
 addBtn.classList.add('active');
 updateBtn.classList.add('desactive');
@@ -49,10 +49,9 @@ function toggleUpdate(){
 addBtn.addEventListener('click',toggleAdd);
 updateBtn.addEventListener('click',toggleUpdate);
 
-
 //toggle preview
 var previewBtn = document.getElementById('previewBtn');
-var previewContent = document.getElementById('previewColor');
+var previewContent = document.getElementById('previewActivity');
 
 previewBtn.classList.add('active');
 previewContent.classList.add('show');
@@ -70,4 +69,4 @@ function togglePreview(){
         previewContent.classList.remove('hidden');
     }
 }
- previewBtn.addEventListener('click',togglePreview);
+previewBtn.addEventListener('click',togglePreview);

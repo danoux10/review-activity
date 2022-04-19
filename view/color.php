@@ -5,7 +5,7 @@
  $_SESSION['back'] = '#888888';
  $_SESSION['fill'] = '#880000';
  $_SESSION['border'] = '#00ff00';
- $_SESSION['color'] = '#fffff';
+ $_SESSION['color'] = '#ffffff';
  
  $actBack ='on';
  $actFill ='on';
@@ -17,7 +17,6 @@
  @$color = $_SESSION['color'];
  include_once '../controller/header.php';
  include_once '../models/colorBack.php';
-
 ?>
 <div id="colorForm">
     <div class="formContent">
@@ -127,8 +126,8 @@
         </fieldset>
     </div>
     <div class="previewColor">
-        <h2 id="previeBtn">preview</h2>
-        <div id='previewColor' >
+        <h2 id="previewBtn">preview</h2>
+        <div id='previewColor'>
          <?php echo preview(); ?>
         </div>
     </div>

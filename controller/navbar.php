@@ -1,9 +1,3 @@
-</html>
-<?php
- include_once 'header.php';
-?>
-</head>
-<body>
 <header id="navbar">
     <nav id="navbar_main">
         <ul>
@@ -59,5 +53,12 @@
     <!--anchor switch-->
     <div id="switch" >
     </div>
+    <form action="" method="post">
+        <button type="submit" name="reset">reset</button>
+    </form>
+    <?php if(isset($_POST['reset'])){
+        session_unset();
+        echo 'manger';
+    } ?>
 </header>
 

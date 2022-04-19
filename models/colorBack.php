@@ -67,5 +67,4 @@ if (isset($preview_color)){
 		@$_SESSION['back']=$back;
 		@$_SESSION['fill']=$fill;
 		@$_SESSION['border']=$border;
-
 }

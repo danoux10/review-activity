@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="00d65ee0-ff2d-4a7a-97b9-bd8cf0935278" name="pi" url="http://192.168.1.39/">
+        <fileTransfer rootFolder="/activity" host="192.168.1.39" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" showHiddenFiles="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="b05f4c08-c1b0-43ec-bce4-eb1bfe9c97fe" name="git" url="http://192.168.1.39">
+        <fileTransfer rootFolder="/review-activity" host="192.168.1.39" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="167a8415-f6a5-434f-8c38-ce08aed0f250" name="pi act" url="http://192.168.1.39">
+        <fileTransfer rootFolder="/act" host="192.168.1.39" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

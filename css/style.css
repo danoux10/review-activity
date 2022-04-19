@@ -26,6 +26,16 @@ fieldset legend {
   font-family: cursive;
 }
 
+input[type=text] {
+  background: none;
+  border-radius: 5px;
+  padding-left: 0.5%;
+}
+input[type=text]:focus {
+  border: 1px solid #ff0000;
+  outline: none;
+}
+
 .hidden {
   display: none;
 }
@@ -152,16 +162,6 @@ a {
 #icon_add fieldset label {
   margin-top: 5%;
 }
-#icon_add fieldset input[type=text] {
-  background: none;
-  border-radius: 5px;
-  padding-left: 0.5%;
-  margin-bottom: 5%;
-}
-#icon_add fieldset input[type=text]:focus {
-  border: 1px solid #ff0000;
-  outline: none;
-}
 
 #view_icon {
   margin-top: 1%;
@@ -214,37 +214,37 @@ a {
   margin: 0.2% 0 0.4% 0;
 }
 
-#colorForm {
+#colorForm, #activity_form {
   display: flex;
   justify-content: center;
   align-items: start;
 }
-#colorForm .formContent .showHiddenColor {
+#colorForm .formContent .showHiddenColor, #colorForm .formContent .showHiddenActivity, #activity_form .formContent .showHiddenColor, #activity_form .formContent .showHiddenActivity {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: start;
 }
-#colorForm .formContent .showHiddenColor .s\&hBtn {
+#colorForm .formContent .showHiddenColor .s\&hBtn, #colorForm .formContent .showHiddenActivity .s\&hBtn, #activity_form .formContent .showHiddenColor .s\&hBtn, #activity_form .formContent .showHiddenActivity .s\&hBtn {
   cursor: pointer;
   border: 1px solid;
   padding: 2%;
   border-radius: 50px;
 }
-#colorForm .formContent #color_add, #colorForm .formContent #color_update {
+#colorForm .formContent #color_add, #colorForm .formContent #color_update, #activity_form .formContent #color_add, #activity_form .formContent #color_update {
   border-radius: 10px;
 }
-#colorForm .formContent #color_add legend, #colorForm .formContent #color_update legend {
+#colorForm .formContent #color_add legend, #colorForm .formContent #color_update legend, #activity_form .formContent #color_add legend, #activity_form .formContent #color_update legend {
   width: auto;
   text-align: center;
 }
-#colorForm .formContent #color_add form, #colorForm .formContent #color_update form {
+#colorForm .formContent #color_add form, #colorForm .formContent #color_update form, #activity_form .formContent #color_add form, #activity_form .formContent #color_update form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#colorForm .formContent #color_add form div, #colorForm .formContent #color_update form div {
+#colorForm .formContent #color_add form div, #colorForm .formContent #color_update form div, #activity_form .formContent #color_add form div, #activity_form .formContent #color_update form div {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-content: center;
@@ -252,20 +252,20 @@ a {
   margin: 5% 0;
   text-align: center;
 }
-#colorForm .formContent #color_add form div label, #colorForm .formContent #color_add form div input, #colorForm .formContent #color_update form div label, #colorForm .formContent #color_update form div input {
+#colorForm .formContent #color_add form div label, #colorForm .formContent #color_add form div input, #colorForm .formContent #color_update form div label, #colorForm .formContent #color_update form div input, #activity_form .formContent #color_add form div label, #activity_form .formContent #color_add form div input, #activity_form .formContent #color_update form div label, #activity_form .formContent #color_update form div input {
   cursor: pointer;
 }
-#colorForm .formContent #color_add form div input[type=color], #colorForm .formContent #color_update form div input[type=color] {
+#colorForm .formContent #color_add form div input[type=color], #colorForm .formContent #color_update form div input[type=color], #activity_form .formContent #color_add form div input[type=color], #activity_form .formContent #color_update form div input[type=color] {
   border: none;
   background: none;
 }
-#colorForm .formContent #color_add form div .slide, #colorForm .formContent #color_update form div .slide {
+#colorForm .formContent #color_add form div .slide, #colorForm .formContent #color_update form div .slide, #activity_form .formContent #color_add form div .slide, #activity_form .formContent #color_update form div .slide {
   display: flex;
 }
-#colorForm .formContent #color_add form div .slide input[type=checkbox], #colorForm .formContent #color_update form div .slide input[type=checkbox] {
+#colorForm .formContent #color_add form div .slide input[type=checkbox], #colorForm .formContent #color_update form div .slide input[type=checkbox], #activity_form .formContent #color_add form div .slide input[type=checkbox], #activity_form .formContent #color_update form div .slide input[type=checkbox] {
   display: none;
 }
-#colorForm .formContent #color_add form div .slide label, #colorForm .formContent #color_update form div .slide label {
+#colorForm .formContent #color_add form div .slide label, #colorForm .formContent #color_update form div .slide label, #activity_form .formContent #color_add form div .slide label, #activity_form .formContent #color_update form div .slide label {
   transition: all ease 0.5s;
   border: 1px solid;
   border-radius: 50px;
@@ -275,7 +275,7 @@ a {
   align-items: center;
   justify-content: flex-start;
 }
-#colorForm .formContent #color_add form div .slide label .cercle, #colorForm .formContent #color_update form div .slide label .cercle {
+#colorForm .formContent #color_add form div .slide label .cercle, #colorForm .formContent #color_update form div .slide label .cercle, #activity_form .formContent #color_add form div .slide label .cercle, #activity_form .formContent #color_update form div .slide label .cercle {
   border: 1px solid;
   background: grey;
   border-radius: 50px;
@@ -283,37 +283,37 @@ a {
   height: 15px;
   margin: 0.5%;
 }
-#colorForm .formContent #color_add form div .slide input[type=checkbox]:checked ~ label, #colorForm .formContent #color_update form div .slide input[type=checkbox]:checked ~ label {
+#colorForm .formContent #color_add form div .slide input[type=checkbox]:checked ~ label, #colorForm .formContent #color_update form div .slide input[type=checkbox]:checked ~ label, #activity_form .formContent #color_add form div .slide input[type=checkbox]:checked ~ label, #activity_form .formContent #color_update form div .slide input[type=checkbox]:checked ~ label {
   justify-content: flex-end;
 }
-#colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn {
+#colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn, #activity_form .formContent #color_add form div.btn, #activity_form .formContent #color_update form div.btn {
   display: flex;
   justify-content: space-around;
 }
-#colorForm .previewColor {
+#colorForm .previewColor, #activity_form .previewColor {
   margin: 0 5% 0;
   display: flex;
   flex-direction: column;
   width: 20vw;
 }
-#colorForm .previewColor h2 {
+#colorForm .previewColor h2, #activity_form .previewColor h2 {
   font-family: cursive;
   text-align: center;
   cursor: pointer;
 }
-#colorForm .previewColor h2:after {
+#colorForm .previewColor h2:after, #activity_form .previewColor h2:after {
   margin: 0 0 0 5%;
   font-size: xx-large;
   align-items: center;
   text-align: center;
 }
-#colorForm .previewColor h2.active:after {
+#colorForm .previewColor h2.active:after, #activity_form .previewColor h2.active:after {
   content: "-";
 }
-#colorForm .previewColor h2.desactive:after {
+#colorForm .previewColor h2.desactive:after, #activity_form .previewColor h2.desactive:after {
   content: "+";
 }
-#colorForm .previewColor .colorPreviewBody {
+#colorForm .previewColor .colorPreviewBody, #activity_form .previewColor .colorPreviewBody {
   height: 20vh;
   width: 20vw;
   display: flex;
@@ -321,7 +321,7 @@ a {
   align-items: center;
   border-radius: 20px;
 }
-#colorForm .previewColor .colorPreviewBody .colorPreviewInside {
+#colorForm .previewColor .colorPreviewBody .colorPreviewInside, #activity_form .previewColor .colorPreviewBody .colorPreviewInside {
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -329,7 +329,7 @@ a {
   width: 80%;
   height: 80%;
 }
-#colorForm .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText {
+#colorForm .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText, #activity_form .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText {
   text-transform: uppercase;
 }
 
@@ -344,7 +344,6 @@ a {
 }
 #view_color .color_containt {
   display: grid;
-  border: 1px solid;
   width: 95%;
   height: 50vh;
   padding: 1%;
@@ -367,7 +366,7 @@ a {
 }
 #view_color .color_containt span.container label {
   cursor: pointer;
-  width: 50%;
+  width: 60%;
   height: 50%;
   display: flex;
   justify-content: center;
@@ -394,6 +393,185 @@ a {
 #view_color button[type=submit] {
   font-size: 1.5vw;
   margin: 0 0 0.5% 0;
+}
+
+#activity_form {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  margin-left: 5%;
+}
+#activity_form .formContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#activity_form .formContent .showHiddenActivity {
+  display: flex;
+  width: 20vw;
+  height: 5vh;
+}
+#activity_form .formContent fieldset {
+  border-right: 0px;
+  border-left: 0px;
+  border-radius: 20px;
+}
+#activity_form .formContent fieldset legend {
+  text-align: center;
+}
+#activity_form .formContent fieldset form .nameAct {
+  margin-bottom: 0.5vw;
+  display: flex;
+  justify-content: center;
+}
+#activity_form .formContent fieldset form .nameAct input[type=text] {
+  margin-left: 1vw;
+}
+#activity_form .formContent fieldset form .nameAct input[type=text]::placeholder {
+  color: grey;
+}
+#activity_form .formContent fieldset form .checkSelect {
+  display: flex;
+  justify-content: space-around;
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect {
+  margin-right: 1%;
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect #iconContent {
+  margin-top: 0.2%;
+  background: rgba(255, 255, 255, 0.5);
+  display: grid;
+  align-content: start;
+  padding: 0.5%;
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect #iconContent span {
+  padding: 1%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect #iconContent span input[type=radio] {
+  display: none;
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect #iconContent span input[type=radio]:checked ~ label {
+  border: 1px solid;
+  height: 40px;
+  padding: 10%;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.4);
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect #iconContent span input[type=radio]:checked ~ label .iconView {
+  filter: invert(100%);
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect #iconContent span label {
+  cursor: pointer;
+}
+#activity_form .formContent fieldset form .checkSelect #iconSelect #iconContent span label .iconView {
+  width: 40px;
+  height: 40px;
+  margin: 1% 0;
+}
+#activity_form .formContent fieldset form .checkSelect #colorSelect .color_containt {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  padding: 1%;
+}
+#activity_form .formContent fieldset form .checkSelect #colorSelect .color_containt span.container {
+  margin: 0 5% 0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#activity_form .formContent fieldset form .checkSelect #colorSelect .color_containt span.container input[type=radio] {
+  display: none;
+}
+#activity_form .formContent fieldset form .checkSelect #colorSelect .color_containt span.container input[type=radio]:checked ~ label {
+  filter: grayscale(80%);
+}
+#activity_form .formContent fieldset form .checkSelect #colorSelect .color_containt span.container label {
+  cursor: pointer;
+  width: 70px;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#activity_form .formContent fieldset form .actBtnAdd {
+  display: flex;
+  justify-content: center;
+}
+#activity_form .formContent fieldset form .actBtnAdd button[type=submit] {
+  font-size: 1vw;
+  margin: 0 2%;
+}
+#activity_form .previewColor h2 {
+  font-family: cursive;
+  text-align: center;
+  cursor: pointer;
+}
+#activity_form .previewColor h2:after {
+  margin: 0 0 0 5%;
+  font-size: xx-large;
+  align-items: center;
+  text-align: center;
+}
+#activity_form .previewColor h2.active:after {
+  content: "-";
+}
+#activity_form .previewColor h2.desactive:after {
+  content: "+";
+}
+#activity_form .previewColor #previewActivity {
+  margin-left: 6vw;
+}
+#activity_form .previewColor #previewActivity .cardBody {
+  padding: 1% 0;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+#activity_form .previewColor #previewActivity .cardBody .titleCard {
+  width: 50%;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+#view_activity {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+#view_activity #contentActCard {
+  padding: 0.5% 0 0.5% 0.5%;
+  height: 40vh;
+  display: grid;
+}
+#view_activity #contentActCard .cardContent input[type=radio] {
+  display: none;
+}
+#view_activity #contentActCard .cardContent .cardBody {
+  padding: 1%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  overflow-y: scroll;
+}
+#view_activity #contentActCard .cardContent .cardBody .cardTitle {
+  text-align: center;
+  overflow-wrap: break-word;
+}
+#view_activity button[type=submit] {
+  margin-bottom: 1%;
 }
 
 .scroll::-webkit-scrollbar {
@@ -446,26 +624,26 @@ div.night {
   background: dimgrey;
 }
 
-#colorForm .formContent .showHiddenColor .active {
+#colorForm .formContent .showHiddenColor .active, #colorForm .formContent .showHiddenActivity .active, #activity_form .formContent .showHiddenColor .active, #activity_form .formContent .showHiddenActivity .active {
   background: rgba(255, 255, 255, 0.4);
 }
-#colorForm .formContent .showHiddenColor .active svg {
+#colorForm .formContent .showHiddenColor .active svg, #colorForm .formContent .showHiddenActivity .active svg, #activity_form .formContent .showHiddenColor .active svg, #activity_form .formContent .showHiddenActivity .active svg {
   fill: #ffffff;
 }
-#colorForm .formContent .showHiddenColor .desactive {
+#colorForm .formContent .showHiddenColor .desactive, #colorForm .formContent .showHiddenActivity .desactive, #activity_form .formContent .showHiddenColor .desactive, #activity_form .formContent .showHiddenActivity .desactive {
   border-color: #ffffff;
 }
-#colorForm .formContent .showHiddenColor .desactive svg {
+#colorForm .formContent .showHiddenColor .desactive svg, #colorForm .formContent .showHiddenActivity .desactive svg, #activity_form .formContent .showHiddenColor .desactive svg, #activity_form .formContent .showHiddenActivity .desactive svg {
   fill: #ffffff;
 }
-#colorForm #color_add form div .slide label {
+#colorForm #color_add form div .slide label, #activity_form #color_add form div .slide label {
   border-color: #ffffff;
   background: #880000;
 }
-#colorForm #color_add form div .slide label .cercle {
+#colorForm #color_add form div .slide label .cercle, #activity_form #color_add form div .slide label .cercle {
   border-color: #ffffff;
 }
-#colorForm #color_add form div input[type=checkbox]:checked ~ label {
+#colorForm #color_add form div input[type=checkbox]:checked ~ label, #activity_form #color_add form div input[type=checkbox]:checked ~ label {
   background: green;
 }
 
@@ -531,27 +709,27 @@ body.day #icon_add fieldset input[type=text]:focus {
 body.day #view_icon #iconContent {
   background: gray;
 }
-body.day #colorForm .formContent .showHiddenColor .active {
+body.day #colorForm .formContent .showHiddenColor .active, body.day #colorForm .formContent .showHiddenActivity .active, body.day #activity_form .formContent .showHiddenColor .active, body.day #activity_form .formContent .showHiddenActivity .active {
   background: rgba(0, 0, 0, 0.4);
 }
-body.day #colorForm .formContent .showHiddenColor .active svg {
+body.day #colorForm .formContent .showHiddenColor .active svg, body.day #colorForm .formContent .showHiddenActivity .active svg, body.day #activity_form .formContent .showHiddenColor .active svg, body.day #activity_form .formContent .showHiddenActivity .active svg {
   fill: #000000;
 }
-body.day #colorForm .formContent .showHiddenColor .desactive {
+body.day #colorForm .formContent .showHiddenColor .desactive, body.day #colorForm .formContent .showHiddenActivity .desactive, body.day #activity_form .formContent .showHiddenColor .desactive, body.day #activity_form .formContent .showHiddenActivity .desactive {
   border-color: #000000;
 }
-body.day #colorForm .formContent .showHiddenColor .desactive svg {
+body.day #colorForm .formContent .showHiddenColor .desactive svg, body.day #colorForm .formContent .showHiddenActivity .desactive svg, body.day #activity_form .formContent .showHiddenColor .desactive svg, body.day #activity_form .formContent .showHiddenActivity .desactive svg {
   fill: #000000;
 }
-body.day #colorForm #color_add form div .slide label {
+body.day #colorForm #color_add form div .slide label, body.day #activity_form #color_add form div .slide label {
   border-color: #000000;
   background: #ff0000;
 }
-body.day #colorForm #color_add form div .slide label .cercle {
+body.day #colorForm #color_add form div .slide label .cercle, body.day #activity_form #color_add form div .slide label .cercle {
   border-color: #000000;
   background: lightgray;
 }
-body.day #colorForm #color_add form div input[type=checkbox]:checked ~ label {
+body.day #colorForm #color_add form div input[type=checkbox]:checked ~ label, body.day #activity_form #color_add form div input[type=checkbox]:checked ~ label {
   background: #009e08;
 }
 
@@ -580,37 +758,70 @@ body.day #colorForm #color_add form div input[type=checkbox]:checked ~ label {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
-  #colorForm .formContent {
+  #colorForm .formContent, #activity_form .formContent {
     width: 15%;
   }
-  #colorForm .formContent .showHiddenColor .s\&hBtn {
+  #colorForm .formContent .showHiddenColor .s\&hBtn, #colorForm .formContent .showHiddenActivity .s\&hBtn, #activity_form .formContent .showHiddenColor .s\&hBtn, #activity_form .formContent .showHiddenActivity .s\&hBtn {
     margin-bottom: 5%;
   }
-  #colorForm .formContent .showHiddenColor .s\&hBtn svg {
+  #colorForm .formContent .showHiddenColor .s\&hBtn svg, #colorForm .formContent .showHiddenActivity .s\&hBtn svg, #activity_form .formContent .showHiddenColor .s\&hBtn svg, #activity_form .formContent .showHiddenActivity .s\&hBtn svg {
     width: 1vw;
   }
-  #colorForm .formContent #color_add form div input[type=color], #colorForm .formContent #color_update form div input[type=color] {
+  #colorForm .formContent #color_add form div input[type=color], #colorForm .formContent #color_update form div input[type=color], #activity_form .formContent #color_add form div input[type=color], #activity_form .formContent #color_update form div input[type=color] {
     width: 40px;
     height: 40px;
   }
-  #colorForm .formContent #color_add form div .slide, #colorForm .formContent #color_update form div .slide {
+  #colorForm .formContent #color_add form div .slide, #colorForm .formContent #color_update form div .slide, #activity_form .formContent #color_add form div .slide, #activity_form .formContent #color_update form div .slide {
     width: 3vw;
   }
-  #colorForm .formContent #color_add form div .slide label, #colorForm .formContent #color_update form div .slide label {
+  #colorForm .formContent #color_add form div .slide label, #colorForm .formContent #color_update form div .slide label, #activity_form .formContent #color_add form div .slide label, #activity_form .formContent #color_update form div .slide label {
     height: 20px;
   }
-  #colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn {
+  #colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn, #activity_form .formContent #color_add form div.btn, #activity_form .formContent #color_update form div.btn {
     width: 95%;
   }
-  #colorForm .formContent #color_add form div.btn button[type=submit], #colorForm .formContent #color_update form div.btn button[type=submit] {
+  #colorForm .formContent #color_add form div.btn button[type=submit], #colorForm .formContent #color_update form div.btn button[type=submit], #activity_form .formContent #color_add form div.btn button[type=submit], #activity_form .formContent #color_update form div.btn button[type=submit] {
     font-size: 30px;
   }
-  #colorForm .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText {
+  #colorForm .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText, #activity_form .previewColor .colorPreviewBody .colorPreviewInside .colorPreviewText {
     font-size: xx-large;
   }
 
   #view_color .color_containt {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  #activity_form .formContent fieldset {
+    width: 40vw;
+  }
+  #activity_form .formContent form .checkSelect #iconContent {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  #activity_form .formContent form .checkSelect #colorSelect {
+    margin-left: 1%;
+  }
+  #activity_form .previewColor #previewActivity .cardBody .iconCard {
+    width: 2vw;
+  }
+  #view_activity #contentActCard {
+    width: 90%;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+    column-gap: 1%;
+    row-gap: 3%;
+  }
+  #view_activity #contentActCard .cardBody {
+    height: 55px;
+  }
+  #view_activity #contentActCard .cardBody .iconActCard {
+    width: 1.5vw;
+  }
+  #view_activity #contentActCard .cardBody .cardTitle {
+    font-size: 120%;
+    width: 50%;
+  }
+
+  button[type=submit] {
+    font-size: 1vw;
   }
 }
 @media screen and (max-width: 1440px) {
@@ -635,9 +846,6 @@ body.day #colorForm #color_add form div input[type=checkbox]:checked ~ label {
     margin-top: 1vw;
   }
 
-  #icon_add {
-    margin-top: 20vw;
-  }
   #icon_add #showAddIcon.active {
     margin-top: 5vw;
   }
@@ -661,20 +869,20 @@ body.day #colorForm #color_add form div input[type=checkbox]:checked ~ label {
   #view_icon #iconContent {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
-  #colorForm .formContent {
+  #colorForm .formContent, #activity_form .formContent {
     width: 75%;
   }
-  #colorForm .formContent .showHiddenColor .s\&hBtn {
+  #colorForm .formContent .showHiddenColor .s\&hBtn, #colorForm .formContent .showHiddenActivity .s\&hBtn, #activity_form .formContent .showHiddenColor .s\&hBtn, #activity_form .formContent .showHiddenActivity .s\&hBtn {
     margin-bottom: 2%;
   }
-  #colorForm .formContent .showHiddenColor .s\&hBtn svg {
+  #colorForm .formContent .showHiddenColor .s\&hBtn svg, #colorForm .formContent .showHiddenActivity .s\&hBtn svg, #activity_form .formContent .showHiddenColor .s\&hBtn svg, #activity_form .formContent .showHiddenActivity .s\&hBtn svg {
     width: 4vw;
   }
-  #colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn {
+  #colorForm .formContent #color_add form div.btn, #colorForm .formContent #color_update form div.btn, #activity_form .formContent #color_add form div.btn, #activity_form .formContent #color_update form div.btn {
     width: 98%;
   }
-  #colorForm .formContent #color_add form div.btn button[type=submit], #colorForm .formContent #color_update form div.btn button[type=submit] {
-    font-size: 5vw;
+  #colorForm .formContent #color_add form div.btn button[type=submit], #colorForm .formContent #color_update form div.btn button[type=submit], #activity_form .formContent #color_add form div.btn button[type=submit], #activity_form .formContent #color_update form div.btn button[type=submit] {
+    font-size: 2vw;
   }
   #view_color .color_containt {
     grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -685,6 +893,54 @@ body.day #colorForm #color_add form div input[type=checkbox]:checked ~ label {
     width: 20vw;
   }
   #view_color button[type=submit] {
+    font-size: 2vw;
+  }
+
+  #activity_form .formContent fieldset {
+    width: 30vw;
+  }
+  #activity_form .formContent form .checkSelect {
+    flex-direction: column;
+  }
+  #activity_form .formContent form .checkSelect #iconContent {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  #activity_form .formContent form .checkSelect #iconContent span label .iconView {
+    width: 5px;
+  }
+  #activity_form .formContent form .checkSelect #colorSelect {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-left: 1%;
+  }
+  #activity_form .previewColor #previewActivity .cardBody {
+    width: 100%;
+  }
+  #activity_form .previewColor #previewActivity .cardBody .iconCard {
+    width: 4vw;
+  }
+  #activity_form .previewColor #previewActivity .cardBody .titleCard {
+    font-size: 2vw;
+  }
+
+  #view_activity #contentActCard {
+    width: 90%;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+    column-gap: 1%;
+    row-gap: 3%;
+  }
+  #view_activity #contentActCard .cardBody {
+    height: 55px;
+  }
+  #view_activity #contentActCard .cardBody .iconActCard {
+    width: 5vw;
+  }
+  #view_activity #contentActCard .cardBody .cardTitle {
+    font-size: 120%;
+    width: 50%;
+  }
+
+  button[type=submit] {
     font-size: 5vw;
   }
 }

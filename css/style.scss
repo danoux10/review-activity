@@ -38,6 +38,18 @@ fieldset {
   }
 }
 
+input[type='text'] {
+  background: none;
+  border-radius: 5px;
+  padding-left: .5%;
+
+
+  &:focus {
+    border: 1px solid $red;
+    outline: none;
+  }
+}
+
 //anchor general
 .hidden {
   display: none;
@@ -195,18 +207,6 @@ a {
     label {
       margin-top: 5%;
     }
-
-    input[type='text'] {
-      background: none;
-      border-radius: 5px;
-      padding-left: .5%;
-      margin-bottom: 5%;
-
-      &:focus {
-        border: 1px solid $red;
-        outline: none;
-      }
-    }
   }
 }
 
@@ -274,7 +274,7 @@ a {
 }
 
 //Link color general
-#colorForm {
+#colorForm, #activity_form {
   //sublink add/update
   display: flex;
   justify-content: center;
@@ -282,7 +282,7 @@ a {
 
   .formContent {
     //anchor btn show hidden
-    .showHiddenColor {
+    .showHiddenColor, .showHiddenActivity {
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-around;
@@ -447,8 +447,6 @@ a {
 
   .color_containt {
     display: grid;
-    //grid-template-columns: repeat(12, minmax(0, 1fr));
-    border: 1px solid;
     width: 95%;
     height: 50vh;
     padding: 1%;
@@ -476,7 +474,7 @@ a {
 
       label {
         cursor: pointer;
-        width: 50%;
+        width: 60%;
         height: 50%;
         display: flex;
         justify-content: center;
@@ -509,6 +507,247 @@ a {
   button[type='submit'] {
     font-size: 1.5vw;
     margin: 0 0 .5% 0;
+  }
+}
+
+
+//Link activity
+//anchor form and preview
+#activity_form {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  margin-left: 5%;
+
+  .formContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .showHiddenActivity {
+      display: flex;
+      width: 20vw;
+      height: 5vh;
+    }
+
+    fieldset {
+      border-right: 0px;
+      border-left: 0px;
+      border-radius: 20px;
+
+      legend {
+        text-align: center;
+      }
+
+      form {
+        .nameAct {
+          margin-bottom: .5vw;
+          display: flex;
+          justify-content: center;
+
+          input[type='text'] {
+            margin-left: 1vw;
+
+            &::placeholder {
+              color: grey;
+            }
+          }
+        }
+
+        .checkSelect {
+          display: flex;
+          justify-content: space-around;
+
+          #iconSelect {
+            margin-right: 1%;
+
+            #iconContent {
+              margin-top: .2%;
+              background: rgba($white, .5);
+              display: grid;
+              align-content: start;
+              padding: .5%;
+
+              span {
+                padding: 1%;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+
+                input[type='radio'] {
+                  display: none;
+
+                  &:checked {
+                    ~ label {
+                      border: 1px solid;
+                      height: 40px;
+                      padding: 10%;
+                      border-radius: 10px;
+                      background: rgba($red, .4);
+
+                      .iconView {
+                        filter: invert(100%);
+                      }
+                    }
+                  }
+                }
+
+                label {
+                  cursor: pointer;
+
+                  .iconView {
+                    width: 40px;
+                    height: 40px;
+                    margin: 1% 0;
+                  }
+                }
+              }
+            }
+          }
+
+          #colorSelect {
+            .color_containt {
+              display: grid;
+              grid-template-columns: repeat(6, minmax(0, 1fr));
+              padding: 1%;
+
+              span.container {
+                margin: 0 5% 0;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                input[type='radio'] {
+                  display: none;
+
+                  &:checked {
+                    ~ label {
+                      filter: grayscale(80%);
+                    }
+                  }
+                }
+
+                label {
+                  cursor: pointer;
+                  width: 70px;
+                  height: 50%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+
+        .actBtnAdd {
+          display: flex;
+          justify-content: center;
+
+          button[type='submit'] {
+            font-size: 1vw;
+            margin: 0 2%;
+          }
+
+        }
+      }
+    }
+  }
+
+  //subanchor preview activity
+  .previewColor {
+    h2 {
+      font-family: cursive;
+      text-align: center;
+      cursor: pointer;
+
+      &:after {
+        margin: 0 0 0 5%;
+        font-size: xx-large;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    h2.active {
+      &:after {
+        content: '-';
+      }
+    }
+
+    h2.desactive {
+      &:after {
+        content: '+';
+      }
+    }
+
+    #previewActivity {
+      margin-left: 6vw;
+
+      .cardBody {
+        padding: 1% 0;
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+
+        .iconCard {
+        }
+
+        .titleCard {
+          width: 50%;
+          text-align: center;
+          overflow-wrap: break-word;
+        }
+      }
+    }
+  }
+}
+//anchor select card view
+#view_activity {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+
+  #contentActCard {
+    padding: .5% 0 .5% .5%;
+    height: 40vh;
+    display: grid;
+
+    .cardContent {
+      input[type='radio'] {
+        display: none;
+      }
+
+      .cardBody {
+        padding: 1%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        overflow-y: scroll;
+
+        .iconActCard {
+        }
+
+        .cardTitle {
+          text-align: center;
+          overflow-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  button[type='submit'] {
+    margin-bottom: 1%;
   }
 }
 
@@ -596,10 +835,10 @@ div.night {
 }
 
 //subLink color general
-#colorForm {
+#colorForm, #activity_form {
   //anchor add/update
   .formContent {
-    .showHiddenColor {
+    .showHiddenColor, .showHiddenActivity {
       //subanchor btn show hidden
       .active {
         background: rgba($white, .4);
@@ -651,7 +890,6 @@ div.night {
   //anchor preview
 }
 
-//anchor select
 
 //link day
 body.day {
@@ -666,7 +904,7 @@ body.day {
 
     &:hover {
       color: $darkred;
-      background: rgb($black, .2);
+      background: rgba($black, .2);
       border-bottom: 1px solid $darkred;
       border-right: 1px solid $darkred;
     }
@@ -756,11 +994,10 @@ body.day {
   }
 
   //subLink color day
-
-  #colorForm {
+  #colorForm, #activity_form {
     //anchor add/update
     .formContent {
-      .showHiddenColor {
+      .showHiddenColor, .showHiddenActivity {
         //subanchor btn show hidden
         .active {
           background: rgba($black, .4);
@@ -812,15 +1049,13 @@ body.day {
 
     //anchor preview
   }
-
-  //anchor select
 }
 
 //Link resposive
-//sublink desktop
+//sublink desktop Large
 @media screen and (min-width: 1441px) {
   //anchor general
-  //subanchor navbar large
+  //subanchor navbar Large
   #navbar {
     nav {
       width: 50vw;
@@ -840,7 +1075,7 @@ body.day {
       }
     }
   }
-  //anchor icon large
+  //anchor icon Large
   // subanchor add
   #icon_add {
     #showAddIcon {
@@ -865,13 +1100,13 @@ body.day {
       grid-template-columns: repeat(12, minmax(0, 1fr));
     }
   }
-  //anchor color large
-  #colorForm {
+  //anchor color Large
+  #colorForm, #activity_form {
     //subanchor add/update
     .formContent {
       width: 15%;
       //subanchor btn show hidden
-      .showHiddenColor {
+      .showHiddenColor, .showHiddenActivity {
 
         .s\&hBtn {
           margin-bottom: 5%;
@@ -952,7 +1187,6 @@ body.day {
       }
     }
   }
-
   #view_color {
 
     .color_containt {
@@ -987,12 +1221,114 @@ body.day {
 
     }
   }
+  //sublink activity Large
+  #activity_form {
+    .formContent {
+      .showHiddenActivity {
+
+      }
+
+      fieldset {
+        width: 40vw;
+
+        legend {
+        }
+      }
+
+      form {
+        .nameAct {
+
+        }
+
+        .checkSelect {
+
+          #iconContent {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+
+            span {
+              input {
+
+              }
+
+              label {
+                .iconView {
+
+                }
+              }
+            }
+          }
+
+          #colorSelect {
+            margin-left: 1%;
+
+            .color_containt {
+              span.container {
+
+              }
+
+              label {
+
+              }
+
+              .actBtnAdd {
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .previewColor {
+      h2 {
+
+      }
+
+      #previewActivity {
+        .cardBody {
+          .iconCard {
+            width: 2vw;
+          }
+
+          .titleCard {
+
+          }
+        }
+      }
+    }
+  }
+
+  #view_activity {
+    #contentActCard {
+      width: 90%;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+      column-gap: 1%;
+      row-gap: 3%;
+
+      .cardBody {
+        height: 55px;
+
+        .iconActCard {
+          width: 1.5vw;
+        }
+
+        .cardTitle {
+          font-size: 120%;
+          width: 50%;
+        }
+      }
+    }
+  }
+  button[type='submit'] {
+    font-size: 1vw;
+  }
 }
 
-//sublink mobile
+//sublink mobile Small
 @media screen and (max-width: 1440px) {
   body {
-    //background: red;
+    //background: red; //Update
   }
   //subLink navbar small
   #navbar {
@@ -1027,11 +1363,9 @@ body.day {
       }
     }
   }
-  // sublink icon small
+  // sublink icon Small
   //anchor add
   #icon_add {
-    margin-top: 20vw;
-
     #showAddIcon.active {
       margin-top: 5vw;
     }
@@ -1065,13 +1399,13 @@ body.day {
       }
     }
   }
-  //subLink color small
-  #colorForm {
+  //subLink color Small
+  #colorForm, #activity_form {
     //anchor add/update
     .formContent {
       width: 75%;
       //subanchor btn show hidden
-      .showHiddenColor {
+      .showHiddenColor, .showHiddenActivity {
         .s\&hBtn {
           margin-bottom: 2%;
 
@@ -1126,7 +1460,7 @@ body.day {
             width: 98%;
 
             button[type='submit'] {
-              font-size: 5vw;
+              font-size: 2vw;
             }
           }
         }
@@ -1184,9 +1518,114 @@ body.day {
     }
 
     button[type='submit'] {
-      font-size: 5vw;
+      font-size: 2vw;
     }
   }
-}
+  //sublink activity Small
+  #activity_form {
+    .formContent {
+      .showHiddenActivity {
 
+      }
+
+      fieldset {
+        width: 30vw;
+
+        legend {
+        }
+      }
+
+      form {
+        .nameAct {
+
+        }
+
+        .checkSelect {
+          flex-direction: column;
+
+          #iconContent {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+
+            span {
+              input {
+
+              }
+
+              label {
+                .iconView {
+                  width: 5px;
+                }
+              }
+            }
+          }
+
+          #colorSelect {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            margin-left: 1%;
+
+            .color_containt {
+              span.container {
+
+              }
+
+              label {
+
+              }
+
+              .actBtnAdd {
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .previewColor {
+      h2 {
+
+      }
+
+      #previewActivity {
+        .cardBody {
+          width: 100%;
+
+          .iconCard {
+            width: 4vw;
+          }
+
+          .titleCard {
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+  }
+
+  #view_activity {
+    #contentActCard {
+      width: 90%;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+      column-gap: 1%;
+      row-gap: 3%;
+
+      .cardBody {
+        height: 55px;
+
+        .iconActCard {
+          width: 5vw;
+        }
+
+        .cardTitle {
+          font-size: 120%;
+          width: 50%;
+        }
+      }
+    }
+  }
+  button[type='submit'] {
+    font-size: 5vw;
+  }
+}
 
